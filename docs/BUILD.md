@@ -19,11 +19,15 @@ Install [Debian](https://www.debian.org). You must build from the same distribut
 # Clone the tiler repsitoroy
 git clone https://github.com/zulcss/tiler/
 # build the docker container
-sudo tools/build-container
+sudo tools/build-container.sh
 # Run the container
 sudo tools/run-dev.sh
 # Inside the container clone live-config repository
 git clone https://github.com/zulcss/pablo-live-config
+
+# Install tiler
+PBR_VERSION=1.2.3 pip3 install -e . --break-system-packages
+
 # Create the ISO
-sudo tiler iso build --config pablo-lvie-config
+tiler iso build --config pablo-live-config
 
